@@ -1,0 +1,27 @@
+{
+  "name": "graphql-todo",
+  "version": "1.0.0",
+  "description": "graphql tot",
+  "main": "index.js",
+  "eslintConfig": {},
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deevo-sage/graphql-todo.git"
+  },
+  "author": "Sidharth Sahni",
+  "license": "ISC",
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "leva": "^0.9.11",
+    "parcel-bundler": "^1.12.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "sass": "^1.35.1",
+    "typescript": "^4.3.2"
+  }
+}

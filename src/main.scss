@@ -1,0 +1,30 @@
+$listbg: #ffffff;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body {
+  background-color: cadetblue;
+}
+.app {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.listcontainer {
+  margin-top: 2rem;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  align-items: flex-end;
+  div {
+    user-select: none;
+    background-color: $listbg;
+    color: $listbg;
+    margin: 0px 3px;
+    font-size: 1px;
+  }
+}
