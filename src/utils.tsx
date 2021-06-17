@@ -100,10 +100,74 @@ const quickSort = async ({ sorting, setsorting, setselected, delay, }: { sorting
     }
     await sort(temp, 0, temp.length - 1)
 }
+const mergeSort = async ({ sorting, setsorting, setselected, delay, }: { sorting: number[], setsorting: Function, setselected: Function, delay: number, }) => {
+    let temp = sorting, done = [];
+    const msort = async (list: number[], l: number, h: number) => {
+        if (l < h) {
+            let mid = Math.floor((l + h) / 2);
+            await msort(list, l, mid)
+            await msort(list, mid + 1, h)
+            await merge(list, l, mid, h)
+        }
+    }
+    const merge = async (list: number[], l: number, mid: number, h: number) => {
+        let i = l, j = mid + 1, k = l;
+        while (i <= mid && j <= h) {
+            if (list[i] < list[j]) {
+                done[k] = list[i];
+                i++
+                setselected([k, i])
+                await delayfunc(delay, () => {
+                    setsorting(done)
+                })
+            }
+            else {
+                done[k] = list[j];
+                j++
+                setselected([k, i])
+                await delayfunc(delay, () => {
+                    setsorting(done)
+                })
+            }
+            k++
+        }
+        if (i > mid) {
+            while (j <= h) {
+                done[k] = list[j]
+                j++
+                k++
+
+            }
+
+        }
+        else {
+            while (i <= mid) {
+                done[k] = list[i]
+                i++
+                k++
+            }
+        }
+        for (k = l; k <= h; k++) {
+            temp[k] = done[k]
+            setselected([k, k])
+            await delayfunc(delay, () => {
+                setsorting(temp)
+            })
+        }
+    }
+    await msort(temp, 0, temp.length - 1)
+    setselected([0, done.length])
+    await delayfunc(delay, () => {
+        setsorting(done)
+    })
+    console.log(done)
+
+}
 export default {
     bubbleSort,
     insertionSort,
     selectionSort,
-    quickSort
+    quickSort,
+    mergeSort
 }
 

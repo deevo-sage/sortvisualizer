@@ -23,7 +23,7 @@ function App() {
   })
   const cont = useRef<HTMLDivElement>()
   const [list, setlist] = useState<number[]>(generatelist())
-  const [sortselect, setsortselect] = useState<string>('quickSort')
+  const [sortselect, setsortselect] = useState<string>('mergeSort')
   useEffect(() => {
     setlist(generatelist())
   }, [length, randomness])
@@ -42,6 +42,7 @@ function App() {
         id: 'age-native-helper',
       }}
     >
+      <option value={"mergeSort"}>mergeSort</option>
       <option value={"bubbleSort"}>bubbleSort</option>
       <option value={"insertionSort"}>insertionSort</option>
       <option value={"selectionSort"}>selectionSort</option>
