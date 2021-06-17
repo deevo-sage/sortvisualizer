@@ -113,7 +113,7 @@ const mergeSort = async ({ sorting, setsorting, setselected, delay, }: { sorting
     const merge = async (list: number[], l: number, mid: number, h: number) => {
         let i = l, j = mid + 1, k = l;
         while (i <= mid && j <= h) {
-            if (list[i] < list[j]) {
+            if (list[i] > list[j]) {
                 done[k] = list[i];
                 i++
                 setselected([k, i])
