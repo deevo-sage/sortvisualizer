@@ -18,8 +18,7 @@ function App() {
   const { length, randomness, delay } = useControls({
     length: { min: 10, value: 45, max: 100, step: 1 },
     randomness: { min: 10, value: 50, max: 100, step: 5 },
-    delay: { min: 10, value: 100, max: 1000, step: 50 },
-
+    delay: { min: 10, value: 0, max: 250, step: 20 },
   })
   const cont = useRef<HTMLDivElement>()
   const [list, setlist] = useState<number[]>(generatelist())
@@ -43,10 +42,10 @@ function App() {
       }}
     >
       <option value={"mergeSort"}>mergeSort</option>
-      <option value={"bubbleSort"}>bubbleSort</option>
+      <option value={"quickSort"}>quickSort</option>
       <option value={"insertionSort"}>insertionSort</option>
       <option value={"selectionSort"}>selectionSort</option>
-      <option value={"quickSort"}>quickSort</option>
+      <option value={"bubbleSort"}>bubbleSort</option>
 
     </NativeSelect>
     <div className="listcontainer" ref={cont}>

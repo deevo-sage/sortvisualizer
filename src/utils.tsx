@@ -118,7 +118,6 @@ const mergeSort = async ({ sorting, setsorting, setselected, delay, }: { sorting
                 i++
                 setselected([k, i])
                 await delayfunc(delay, () => {
-                    setsorting(done)
                 })
             }
             else {
@@ -126,7 +125,6 @@ const mergeSort = async ({ sorting, setsorting, setselected, delay, }: { sorting
                 j++
                 setselected([k, i])
                 await delayfunc(delay, () => {
-                    setsorting(done)
                 })
             }
             k++
