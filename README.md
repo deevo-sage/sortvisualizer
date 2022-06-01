@@ -1,5 +1,7 @@
 # sortvisualizer
 
+https://elastic-shaw-6ecd3b.netlify.app/
+
 A simple sort visualizer made with TypeScript and React.
 
 ## commads
